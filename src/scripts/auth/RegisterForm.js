@@ -16,7 +16,6 @@ eventHub.addEventListener("click", e => {
             fetch(`http://localhost:8088/users?username=${username}`)
                 .then(response => response.json())
                 .then(users => {
-                    debugger
                     if (users.length === 0) {
                         fetch("http://localhost:8088/users", {
                             "method": "POST",
