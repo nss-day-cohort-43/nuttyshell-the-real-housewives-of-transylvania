@@ -14,31 +14,31 @@ eventHub.addEventListener("click", e => {
         if (username !== "" && email !== "") {
             // Does the user exist?
             fetch(`http://localhost:8088/users?username=${username}`)
-            .then(response => response.json())
-            .then(users => {
-                if (users.length === 0) {
-                    fetch("http://localhost:8088/users", {
-                        "method": "POST",
-                        "headers": {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            "username": username,
-                            "email": email
+                .then(response => response.json())
+                .then(users => {
+                    if (users.length === 0) {
+                        fetch("http://localhost:8088/users", {
+                            "method": "POST",
+                            "headers": {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({
+                                "username": username,
+                                "email": email
+                            })
                         })
-                    })
-                        .then(response => response.json())
-                        .then((newUser) => {
-                            sessionStorage.setItem("activeUser", newUser.id)
+                            .then(response => response.json())
+                            .then((newUser) => {
+                                sessionStorage.setItem("activeUser", newUser.username)
 
-                            eventHub.dispatchEvent(new CustomEvent("userAuthenticated"))
-                        })
+                                eventHub.dispatchEvent(new CustomEvent("userAuthenticated"))
+                            })
 
-                }
-                else {
-                    window.alert("Username already exists!  😭")
-                }
-            })
+                    }
+                    else {
+                        window.alert("Username already exists!  😭")
+                    }
+                })
         }
     }
 })
