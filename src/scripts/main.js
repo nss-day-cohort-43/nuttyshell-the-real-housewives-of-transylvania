@@ -14,11 +14,9 @@ let credentials = {}
 
 const loadUI = () => {
     if (sessionStorage.getItem("activeUser")) {
-        console.log('got user')
         credentials = sessionStorage.getItem("activeUser")
         Nutshell();
     } else {
-        console.log('no user')
         LoginForm();
         RegisterForm()
     }
