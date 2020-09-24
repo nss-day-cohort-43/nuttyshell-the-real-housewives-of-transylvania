@@ -1,15 +1,17 @@
-import { getMessages, useMessages } from "./chatProvider.js"
+import { getMessages, useMessages, submitMessage } from "./chatProvider.js"
 
 
-const eventHub = document.querySelector("main")
+const eventHub = document.querySelector(".hubEvent")
 const chatFeed = document.querySelector(".dashboard")
 
-eventHub.addEventListener = ("click", event => {
+eventHub.addEventListener("click", event => {
     if (event.target.id === "submit") {
         const messageBody = document.querySelector("#newMessage")
         const newMessage = {
-            body: messageBody.value
+            body: messageBody.value,
+            users_id: messageBody.id
         }
+        submitMessage(newMessage)
     }
 })
 
@@ -17,13 +19,17 @@ const renderFeed = (messageObject) => {
     chatFeed.innerHTML = `
 <h3>Chat Room</h3>
     <section id="chatParentContainer">
-        <div class="message" id="idNumber">
-            <p>This will be the chat feed!</p>
-        </div>
-    </section>
+        <div class="message">
+            ${messageObject.map(messages => {
+        return `<p>${messages.body}</p>`
+    }).join("")
+
+        }
+        </div >
+    </section >
     <section id="enterMessage">
-    <textarea id="newMessage" name="newMessage">put what you want here</textarea>
-    <button type="submit">Send</button>
+        <textarea id="newMessage" name="newMessage" placeholder="@ will make a private message"></textarea>
+        <button type="submit" id="submit">Send</button>
     `
 }
 
