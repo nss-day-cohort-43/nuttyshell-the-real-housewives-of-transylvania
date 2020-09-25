@@ -1,8 +1,8 @@
 import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
-import { getArticles, useArticles } from "./news/NewsProvider.js"
-import { NewsList } from "./news/NewsList.js"
+
+
 
 /*
     1. Check if the user is authenticated by looking in session storage for `activeUser`
@@ -24,5 +24,3 @@ const loadUI = () => {
 
 }
 loadUI()
-getArticles()
-NewsList()

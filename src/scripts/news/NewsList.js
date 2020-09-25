@@ -10,7 +10,7 @@ import { NewsEntry } from "./News.js"
 
 // DOM reference to where all entries will be rendered
 const newsArticles = document.querySelector("#newsArticles")
-const eventHub = document.querySelector(".dashboard")
+const eventHub = document.querySelector(".hubEvent")
 
 
 eventHub.addEventListener("newsArticleStateChanged", () => {
@@ -47,7 +47,7 @@ const deleteArticle = articleId => {
 
 
 const render = (articles) => {
-    entryLog.innerHTML = articles.map((article) => {
+    newsArticles.innerHTML = articles.map((article) => {
         return NewsEntry(article)
     }).join("");
 }

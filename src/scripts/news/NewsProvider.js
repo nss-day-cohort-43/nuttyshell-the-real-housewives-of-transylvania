@@ -9,7 +9,7 @@
 // This is the original data.
 let articles = []
 
-const eventHub = document.querySelector(".dashboard")
+const eventHub = document.querySelector(".hubEvent")
 
 /*
     You export a function that provides a version of the
@@ -36,9 +36,9 @@ export const getArticles = () => {
 }
 
 export const useArticles = () => {
-    const sortedByDate = entries.sort(
-        (currentEntry, nextEntry) =>
-            Date.parse(currentEntry.date) - Date.parse(nextEntry.date)
+    const sortedByDate = articles.sort(
+        (currentArticle, nextArticle) =>
+            Date.parse(currentArticle.date) - Date.parse(nextArticle.date)
     )
     return sortedByDate
 }
