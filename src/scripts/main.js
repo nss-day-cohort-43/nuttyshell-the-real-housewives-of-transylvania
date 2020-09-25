@@ -15,3 +15,16 @@ import { TaskList } from "./taskslist/TasksList.js"
 */
 TaskList()
 
+let credentials = {}
+
+const loadUI = () => {
+    if (sessionStorage.getItem("name")) {
+        credentials = sessionStorage.getItem("name")
+        Nutshell();
+    } else {
+        LoginForm();
+        RegisterForm()
+    }
+
+}
+loadUI()
