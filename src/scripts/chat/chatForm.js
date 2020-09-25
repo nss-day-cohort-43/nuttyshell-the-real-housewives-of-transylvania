@@ -4,6 +4,11 @@ import { getMessages, useMessages, submitMessage } from "./chatProvider.js"
 const eventHub = document.querySelector(".hubEvent")
 const chatFeed = document.querySelector(".dashboard")
 
+export const scrollBottom = () => {
+    let chatHistory = document.querySelector(".message");
+    chatHistory.scrollTop = chatHistory.scrollHeight;
+}
+
 eventHub.addEventListener("click", event => {
     if (event.target.id === "submit") {
         const messageBody = document.querySelector("#newMessage")
@@ -25,10 +30,11 @@ const renderFeed = (messageObject) => {
     <section id="chatParentContainer">
         <div class="message">
             ${messageObject.map(messages => {
-        return `<p>${messages.user.username}: ${messages.body}</p > `
+        return `<p>${messages.user.username}: ${messages.body}</p > 
+        `
     }).join("")
-
         }
+
         </div >
     </section >
     <section id="enterMessage">
@@ -43,4 +49,5 @@ export const chatForm = () => {
         .then(() => {
             renderFeed(useMessages())
         })
+        .then(scrollBottom)
 }
