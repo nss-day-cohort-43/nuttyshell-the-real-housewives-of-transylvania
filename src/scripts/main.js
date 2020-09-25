@@ -14,8 +14,8 @@ import { NewsList } from "./news/NewsList.js"
 let credentials = {}
 
 const loadUI = () => {
-    if (sessionStorage.getItem("activeUser")) {
-        credentials = sessionStorage.getItem("activeUser")
+    if (sessionStorage.getItem("name")) {
+        credentials = sessionStorage.getItem("name")
         Nutshell();
     } else {
         LoginForm();
