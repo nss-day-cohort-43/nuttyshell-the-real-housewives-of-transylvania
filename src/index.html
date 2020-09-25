@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <main class="hubEvent">
     <article class="container">
         <article class="auth">
             <section class="auth--login"></section>
@@ -17,9 +18,38 @@
         </article>
         <article class="dashboard">
             <!-- All your Nutshell are belong here -->
+
+            <form class="newTasks">
+                <div class="taskContainer">
+                    <h3>New Tasks</h3>
+                    <fieldset>
+                        <label for="tasksName">Tasks Name</label>
+                        <textarea name="text" name="tasksName" id="tasksName" cols="25" rows="1"></textarea>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <label for="completionDate">Expected Completion Date</label>
+                        <input type="date" name="completionDate" id="completionDate">
+                    </fieldset>
+                    <fieldset>
+                        <label for="saveTask"></label>
+                        <button type="button" id="saveTask" value="saveTask">Save Task</button>
+                        <!-- this should be a ul list -->
+                    </fieldset>
+                    <fieldset>
+                        <label for="clearForm"></label>
+                        <button type="button" id="resetTask">Reset</button>
+                        <!-- <input type="submit" name="clearTask" id="clearTask" value="Clear Task"> -->
+                    </fieldset>
+                </div>
+            </form>
+                <h3>Task List</h3>
+                <article class="taskListContainer"></article>                
+                        
+                   
         </article>
     </article>
-
+</main>
     <script src="./scripts/main.js" type="module"></script>
 
 </body>
