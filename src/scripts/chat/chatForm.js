@@ -7,7 +7,8 @@ const chatFeed = document.querySelector(".dashboard")
 eventHub.addEventListener("click", event => {
     if (event.target.id === "submit") {
         const messageBody = document.querySelector("#newMessage")
-        debugger
+        //line const newMessage builds the object to be stored in messages database
+        //must be logged in, but userID uses active account info stored in sessionstorage
         const newMessage = {
             body: messageBody.value,
             userId: parseInt(sessionStorage.Id)
@@ -16,6 +17,8 @@ eventHub.addEventListener("click", event => {
     }
 })
 
+//renderfeed creates the chat feed (wall) with all stored messages, and displays username
+//before the message
 const renderFeed = (messageObject) => {
     chatFeed.innerHTML = `
 <h3>Chat Room</h3>
@@ -34,6 +37,7 @@ const renderFeed = (messageObject) => {
     `
 }
 
+//chatForm retrieves message DB, then using received messages, renders the chat feed (wall)
 export const chatForm = () => {
     getMessages()
         .then(() => {

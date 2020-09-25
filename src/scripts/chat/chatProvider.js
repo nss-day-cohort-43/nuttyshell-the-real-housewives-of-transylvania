@@ -22,6 +22,8 @@ export const getMessages = () => {
         })
 }
 
+
+//submitMessage saves info in given format found in chatForm.js
 export const submitMessage = (message) => {
     return fetch("http://localhost:8088/messages?_expand=user", {
         method: "POST",
@@ -35,6 +37,8 @@ export const submitMessage = (message) => {
         .then(chatForm)
 }
 
+
+//delete coming tomorrow
 export const deleteEntry = messageId => {
     return fetch(`http://localhost:8088/messages/${messageID}`, {
         method: "DELETE"
