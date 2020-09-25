@@ -38,6 +38,7 @@ export const addTasksToDOM = (theTaskArray) => {
     
 }
 
+
 export const TaskList =() => {
     getTasks()
     .then(() => {

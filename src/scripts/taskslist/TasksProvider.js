@@ -14,7 +14,7 @@ export const useTasks = () => {
 }
 
 export const getTasks = () => {
-
+//the response is parsed to return items in as JavaScript Object Notation.
     return fetch('http://localhost:8088/tasks')
     .then(response => response.json())
     .then(parsedTasks => {
@@ -23,7 +23,7 @@ export const getTasks = () => {
     })
 }
 
-
+//The order should be POST, GET, render...in that order
 export const saveTasks = newTask => {
   
     return fetch("http://localhost:8088/tasks", {
