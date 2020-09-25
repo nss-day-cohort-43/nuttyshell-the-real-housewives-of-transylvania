@@ -16,11 +16,7 @@ eventHub.addEventListener("click", e => {
             fetch(`http://localhost:8088/users?username=${username}`)
                 .then(response => response.json())
                 .then(users => {
-<<<<<<< HEAD
-                    if (users.length >= 0) {
-=======
                     if (users.length === 0) {
->>>>>>> master
                         fetch("http://localhost:8088/users", {
                             "method": "POST",
                             "headers": {
@@ -33,11 +29,7 @@ eventHub.addEventListener("click", e => {
                         })
                             .then(response => response.json())
                             .then((newUser) => {
-<<<<<<< HEAD
-                                sessionStorage.setItem("activeUser", newUser.id)
-=======
                                 sessionStorage.setItem("activeUser", newUser.username)
->>>>>>> master
 
                                 eventHub.dispatchEvent(new CustomEvent("userAuthenticated"))
                             })

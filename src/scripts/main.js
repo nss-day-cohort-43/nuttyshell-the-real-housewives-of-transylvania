@@ -2,8 +2,6 @@ import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
 
-Nutshell()
-
 /*
     1. Check if the user is authenticated by looking in session storage for `activeUser`
     2. If so, render the Nutshell component
@@ -14,8 +12,8 @@ Nutshell()
 let credentials = {}
 
 const loadUI = () => {
-    if (sessionStorage.getItem("activeUser")) {
-        credentials = sessionStorage.getItem("activeUser")
+    if (sessionStorage.getItem("name")) {
+        credentials = sessionStorage.getItem("name")
         Nutshell();
     } else {
         LoginForm();

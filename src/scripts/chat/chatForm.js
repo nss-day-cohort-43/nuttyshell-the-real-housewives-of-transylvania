@@ -7,9 +7,10 @@ const chatFeed = document.querySelector(".dashboard")
 eventHub.addEventListener("click", event => {
     if (event.target.id === "submit") {
         const messageBody = document.querySelector("#newMessage")
+        debugger
         const newMessage = {
             body: messageBody.value,
-            userId: messageBody.user.id
+            userId: parseInt(sessionStorage.Id)
         }
         submitMessage(newMessage)
     }
@@ -21,7 +22,7 @@ const renderFeed = (messageObject) => {
     <section id="chatParentContainer">
         <div class="message">
             ${messageObject.map(messages => {
-        return `<p>${messages.user.name}: ${messages.body}</p > `
+        return `<p>${messages.user.username}: ${messages.body}</p > `
     }).join("")
 
         }
