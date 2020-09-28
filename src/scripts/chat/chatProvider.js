@@ -39,8 +39,8 @@ export const submitMessage = (message) => {
 
 
 //delete coming tomorrow
-export const deleteEntry = messageId => {
-    return fetch(`http://localhost:8088/messages/${messageID}`, {
+export const deleteMessage = messageId => {
+    return fetch(`http://localhost:8088/messages/${messageId}`, {
         method: "DELETE"
     })
         .then(getMessages)
