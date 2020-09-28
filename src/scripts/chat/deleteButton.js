@@ -12,12 +12,3 @@ export const renderDelete = (message) => {
         return ""
     }
 }
-
-// const deleteElement = document.querySelector(".message")
-
-// eventHub.addEventListener("load", event => {
-//     debugger;
-//     if (sessionStorage.id === target.user.id) {
-//         deleteElement.innerHTML = `<button>delete</button>`
-//     }
-// })

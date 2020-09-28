@@ -65,7 +65,6 @@ export const chatForm = () => {
         .then(() => {
             renderFeed(useMessages())
         })
-        // .then(renderDelete)
         .then(scrollBottom)
 }
 
