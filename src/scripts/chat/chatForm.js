@@ -22,6 +22,8 @@ eventHub.addEventListener("click", event => {
         }
         submitMessage(newMessage)
     } else if (event.target.id.startsWith("chatDelete-")) {
+        //this if state will split the id of each individual message, and it it matches the id of the 
+        //delete button that was clicked... it will only delete the matching message
         const [prefix, id] = event.target.id.split("-")
         deleteMessage(id)
             .then(chatForm)

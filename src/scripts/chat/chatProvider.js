@@ -38,7 +38,7 @@ export const submitMessage = (message) => {
 }
 
 
-//delete coming tomorrow
+//deletes message based on what button id that was clicked on (see deleteButton.js)
 export const deleteMessage = messageId => {
     return fetch(`http://localhost:8088/messages/${messageId}`, {
         method: "DELETE"
