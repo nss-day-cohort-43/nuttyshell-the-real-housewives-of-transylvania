@@ -1,5 +1,3 @@
-import { saveArticle } from "./NewsProvider.js"
-
 const contentTarget = document.querySelector(".journal-form");
 const eventHub = document.querySelector(".hubEvent");
 
@@ -35,15 +33,7 @@ eventHub.addEventListener("click", clickEvent => {
 
 const render = () => {
     contentTarget.innerHTML = `
-    <form action="">
-    <fieldset>
-        <label for="articleDate">Date of Article</label>
-        <input type="date" name="journalDate" id="journalDate"><br><br>
-        <label for="articleTitle">Article Title:</label>
-        <textarea id="concepts" name="concepts"></textarea><br><br>
-        <label for="articleContent">Journal Entry:</label>
-        <textarea id="articleSource" name="entry"></textarea><br><br>
-        <br><br>
+    
         <button type="button" id="saveArticle">Save</button>
     </fieldset>
 </form>
