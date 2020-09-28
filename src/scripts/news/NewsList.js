@@ -7,15 +7,6 @@
 import { useArticles, getArticles } from "./NewsProvider.js"
 import { NewsEntry } from "./News.js"
 
-/*document.getElementById("#createNewArticleBttn").addEventListener('click', function () {
-    document.querySelector('.newsModalContent').style.display = 'flex';
-});
-
-document.querySelector('.newsModalClose').addEventListener('click', function () {
-    document.querySelector('.newsModalContent').style.display = 'none';
-
-});
-*/
 // DOM reference to where all entries will be rendered
 
 const newsArticles = document.querySelector("#newsArticles")
@@ -26,6 +17,7 @@ eventHub.addEventListener("newsArticleStateChanged", () => {
     render(newEntry)
 })
 
+// Event listeners for modal
 eventHub.addEventListener("click", clickEvent => {
 
     if (clickEvent.target.id === "createNewArticleBttn") {
@@ -48,7 +40,7 @@ eventHub.addEventListener("click", clickEvent => {
             Invoke the function that performs the delete operation.
 
             Once the operation is complete you should THEN invoke
-            useNotes() and render the note list again.
+            useArticles() and render the updated articles list.
         */
         deleteArticle(id).then(
             () => {
@@ -67,7 +59,7 @@ const deleteArticle = articleId => {
         .then(getArticles)
 }
 
-
+// render the articles and the Create New Article button
 const render = (articles) => {
     newsArticles.innerHTML = `${articles.map((article) => {
         return NewsEntry(article)
@@ -75,7 +67,7 @@ const render = (articles) => {
     <button id="createNewArticleBttn">Create New Article</button>`
 }
 
-
+// export the NewsList funcition, to be invoked in Nutshell.js
 export const NewsList = () => {
     getArticles()
         .then(useArticles)

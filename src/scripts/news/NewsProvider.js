@@ -51,8 +51,7 @@ export const saveArticle = newArticle => {
         },
         body: JSON.stringify(newArticle)
     })
-        .then(getArticles)
-        // <-- Get all journal entries
-        .then(dispatchStateChangeEvent)  // <-- Broadcast the state change event
+        .then(getArticles)  // <-- Gets all articles
+        .then(dispatchStateChangeEvent)  // <-- Broadcasts the state change event
 
 }

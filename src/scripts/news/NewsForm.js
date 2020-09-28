@@ -1,6 +1,6 @@
-import { saveArticle } from "./NewsProvider.js"
+import { getArticles, useArticles, saveArticle } from "./NewsProvider.js"
 
-const contentTarget = document.querySelector(".journal-form");
+const contentTarget = document.querySelector(".createNewArticle");
 const eventHub = document.querySelector(".hubEvent");
 
 eventHub.addEventListener("click", clickEvent => {
@@ -12,7 +12,7 @@ eventHub.addEventListener("click", clickEvent => {
         const articleContent = document.querySelector("#articleContent")
         const articleSource = document.querySelector("#articleSource")
 
-        //if (entryText.value !== "0") {
+
         const newArticle = {
             date: articleDate.value,
             title: articleTitle.value,
@@ -21,39 +21,29 @@ eventHub.addEventListener("click", clickEvent => {
 
         }
         saveArticle(newArticle);
-
-
-
-
     }
 
-
 })
-
-
-
-
+// This renders the modal
 const render = () => {
     contentTarget.innerHTML = `
-    <form action="">
-    <fieldset>
-        <label for="articleDate">Date of Article</label>
-        <input type="date" name="journalDate" id="journalDate"><br><br>
-        <label for="articleTitle">Article Title:</label>
-        <textarea id="concepts" name="concepts"></textarea><br><br>
-        <label for="articleContent">Journal Entry:</label>
-        <textarea id="articleSource" name="entry"></textarea><br><br>
-        <br><br>
-        <button type="button" id="saveArticle">Save</button>
-    </fieldset>
-</form>
-    `
+    
+                    <div class="newsModalContent">
+                        <div id="newsModalClose">+</div>
+                        <form action="">
+                            <input type="text" id="articleDate" placeholder="Date">
+                            <input type="text" id="articleTitle" placeholder="Title">
+                            <input type="text" id="articleContent" placeholder="Synopsis">
+                            <input type="text" id="articleSource" placeholder="URL">
+                            <button type="button" id="saveArticle">Save</button>
+                        </form> `
 }
+
 export const ArticlesForm = () => {
 
-    getMoods()
+    getArticles()
         .then(() => {
-            render(useMoods());
+            render(useArticles());
         })
 
 }
