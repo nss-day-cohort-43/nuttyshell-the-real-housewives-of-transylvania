@@ -22,7 +22,7 @@
     position: relative;
 }
 
-.newsModalClose {
+#newsModalClose {
     position: absolute;
     top: 0;
     right: 14px;

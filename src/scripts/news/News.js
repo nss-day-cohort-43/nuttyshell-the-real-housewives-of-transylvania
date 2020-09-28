@@ -14,4 +14,3 @@ export const NewsEntry = (newEntry) => {
         </section>
     `
 }
-console.log(NewsEntry)

@@ -7,15 +7,37 @@
 import { useArticles, getArticles } from "./NewsProvider.js"
 import { NewsEntry } from "./News.js"
 
+/*document.getElementById("#createNewArticleBttn").addEventListener('click', function () {
+    document.querySelector('.newsModalContent').style.display = 'flex';
+});
 
+document.querySelector('.newsModalClose').addEventListener('click', function () {
+    document.querySelector('.newsModalContent').style.display = 'none';
+
+});
+*/
 // DOM reference to where all entries will be rendered
+
 const newsArticles = document.querySelector("#newsArticles")
 const eventHub = document.querySelector(".hubEvent")
-
 
 eventHub.addEventListener("newsArticleStateChanged", () => {
     const newEntry = useArticles()
     render(newEntry)
+})
+
+eventHub.addEventListener("click", clickEvent => {
+
+    if (clickEvent.target.id === "createNewArticleBttn") {
+        document.querySelector('.createNewArticle').style.display = 'flex';
+    }
+})
+
+eventHub.addEventListener("click", clickEvent => {
+
+    if (clickEvent.target.id === "newsModalClose") {
+        document.querySelector('.createNewArticle').style.display = 'none';
+    }
 })
 
 eventHub.addEventListener("click", clickEvent => {
@@ -47,9 +69,10 @@ const deleteArticle = articleId => {
 
 
 const render = (articles) => {
-    newsArticles.innerHTML = articles.map((article) => {
+    newsArticles.innerHTML = `${articles.map((article) => {
         return NewsEntry(article)
-    }).join("");
+    }).join("")}
+    <button id="createNewArticleBttn">Create New Article</button>`
 }
 
 
@@ -57,4 +80,5 @@ export const NewsList = () => {
     getArticles()
         .then(useArticles)
         .then(render)
+
 }
