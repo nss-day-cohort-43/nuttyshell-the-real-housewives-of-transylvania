@@ -2,19 +2,29 @@ const eventHub = document.querySelector(".hubEvent")
 
 let eventEntries = []
 
-const dispatchStateChangeEvent = () => {
+const dispatchChangeEvent = () => {
     eventHub.dispatchEvent(new CustomEvent("eventStateChanged"))
 }
+ 
+//Chronological sorting function
+export const useDateEvent = () => {
+    const sortByDate = eventEntries.sort(
+        (currentEvent, nextEvent) =>
+            Date.parse(currentEvent.date) - Date.parse(nextEvent.date)
+    )
+    return sortByDate
+}
 
+//Pull event information from json server function
 export const getEventEntries = () => {
-    return fetch("http://localhost:8088/entries?_expand=mood") // Fetch from the API
-
+    return fetch("http://localhost:8088/events") 
         .then(response => response.json())
         .then(parsedEntries => {
         eventEntries = parsedEntries
     })
 }
 
+//Save event function
 export const saveEventEntry = newEventEntry => {
     return fetch("http://localhost:8088/events", {
         method: "POST",
@@ -23,5 +33,13 @@ export const saveEventEntry = newEventEntry => {
         },
         body: JSON.stringify(newEventEntry)
         }) 
-    .then(dispatchStateChangeEvent) // <-- Broadcast the state change event
+    .then(dispatchChangeEvent) 
+}
+
+//Delete event function
+export const deleteEvent = deletedEvent => {
+    return fetch('http://localhost:8088/events/${deletedEvent.id}',{
+        method: "DELETE"
+    })
+    .then(dispatchChangeEvent)
 }

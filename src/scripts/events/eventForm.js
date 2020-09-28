@@ -20,8 +20,14 @@ eventHub.addEventListener("click", clickEvent => {
     }
 })
 
-export const eventFormComponent = (event) => {
-    contentTarget.innerHTML = `
+// export const eventButton = () => {
+//    contentTarget.innerHTML = `
+//     <button onclick="eventFillableForm()">New Event</button>
+//     `
+// }
+
+export const eventFillableForm = () => {
+   return `
         <h2>New Event</h2>
         <fieldset>
         <label for="eventName">Name of Event</label>
