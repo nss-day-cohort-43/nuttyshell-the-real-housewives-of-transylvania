@@ -2,6 +2,8 @@ import { getSingleMessage, editMessage } from "./chatProvider.js"
 
 const eventHub = document.querySelector(".hubEvent")
 
+//eventlistener listens for save button on EditMessageForm, takes new info and uses editMessage() from 
+//chatprovider.js. It sends the updated information to database and replaces old info with new edited info
 eventHub.addEventListener("click", event => {
     if (event.target.id.startsWith("saveEdit-")) {
         const [prefix, id] = event.target.id.split("-");
@@ -13,6 +15,9 @@ eventHub.addEventListener("click", event => {
         editMessage(updatedMessage, parseInt(id))
     }
 })
+
+
+//EditMessageForm is on chatForm where it in invoke in eventListener
 export const EditMessageForm = (messageId) => {
     debugger;
     const test = getSingleMessage(parseInt(messageId))
