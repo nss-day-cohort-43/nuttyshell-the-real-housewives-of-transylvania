@@ -22,6 +22,11 @@ export const getMessages = () => {
         })
 }
 
+export const getSingleMessage = (id) => {
+    return fetch(`http://localhost:8088/messages/${id}`)
+        .then(response => response.json())
+}
+
 
 //submitMessage saves info in given format found in chatForm.js
 export const submitMessage = (message) => {
@@ -41,7 +46,21 @@ export const submitMessage = (message) => {
 //deletes message based on what button id that was clicked on (see deleteButton.jsg)
 export const deleteMessage = messageId => {
     return fetch(`http://localhost:8088/messages/${messageId}`, {
-        method: "DELETE"
+        method: "DELETE",
     })
         .then(getMessages)
+}
+
+//export button with allow active user to  edit a previous message sent by them
+export const editMessage = (messageObject, messageId) => {
+    return fetch(`http://localhost:8088/messages/${messageId}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(messageObject)
+    })
+        .then(getMessages)
+        .then(dispatchStateChanges)
+        .then(chatForm)
 }
