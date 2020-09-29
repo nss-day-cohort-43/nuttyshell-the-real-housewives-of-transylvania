@@ -23,7 +23,7 @@ const dispatchStateChangeEvent = () => {
 }
 
 export const getArticles = () => {
-    return fetch("http://localhost:8088/articles") // Fetch from the API
+    return fetch("http://localhost:8088/articles?_expand=usersid") // Fetch from the API
         .then(response => response.json())  // Parse as JSON
         .then(
             parsedArticles => {
