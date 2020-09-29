@@ -1,5 +1,5 @@
 import { getMessages, useMessages, submitMessage, deleteMessage } from "./chatProvider.js"
-import { renderDelete } from "./deleteButton.js"
+import { renderDelete } from "./funcButtons.js"
 
 
 const eventHub = document.querySelector(".hubEvent")

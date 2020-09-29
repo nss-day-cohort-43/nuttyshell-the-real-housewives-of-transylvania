@@ -45,3 +45,11 @@ export const deleteMessage = messageId => {
     })
         .then(getMessages)
 }
+
+//export button with allow active user to  edit a previous message sent by them
+export const editMessage = messageID => {
+    return fetch(`http://localhost:8088/messages/${messageId}`, {
+        method: "PUT"
+    })
+        .then(getMessages)
+}

@@ -5,3 +5,13 @@
     overflow-x: hidden;
 }
 
+.edit {
+   border: none;
+   background-color: transparent;
+   outline: none;
+}
+.delete {
+    border: none;
+    background-color: transparent;
+    outline: none;
+ }
