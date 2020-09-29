@@ -6,6 +6,7 @@
  */
 import { useArticles, getArticles } from "./NewsProvider.js"
 import { NewsEntry } from "./News.js"
+import { newsDelete } from "./NewsDelete.js"
 
 // DOM reference to where all entries will be rendered
 
@@ -33,7 +34,7 @@ eventHub.addEventListener("click", clickEvent => {
 })
 
 eventHub.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id.startsWith("deleteEntry--")) {
+    if (clickEvent.target.id.startsWith("newsDelete--")) {
         const [prefix, id] = clickEvent.target.id.split("--")
 
         /*
@@ -61,10 +62,12 @@ const deleteArticle = articleId => {
 
 // render the articles and the Create New Article button
 const render = (articles) => {
-    newsArticles.innerHTML = `${articles.map((article) => {
-        return NewsEntry(article)
+    newsArticles.innerHTML = `
+    <h3>Interesting Articles</h3>
+    ${articles.map((article) => {
+        return `${NewsEntry(article)} ${newsDelete(article)}`
     }).join("")}
-    <button id="createNewArticleBttn">Create New Article</button>`
+    <button id="createNewArticleBttn" type= "button">Create New Article</button>`
 }
 
 // export the NewsList funcition, to be invoked in Nutshell.js
