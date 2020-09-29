@@ -12,7 +12,7 @@ eventHub.addEventListener("eventChanged", event => {
 //Listens for add event click on existing event list
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "addEventButton") {
-        document.querySelector('.eventForm').style.display = 'flex';
+        document.querySelector('.eventModal').style.display = 'flex';
     }
 })
 
@@ -21,13 +21,13 @@ const render = (events) => {
     listedEvents.innerHTML = `${events.map((event) => {
         return eventHTML(event)
     }).join("")}
-    <button id="addEventButton">Add Event</button>`
+    <button id="addEventButton" type="button">Add Event</button>`
 }
 
 //Listens for close x click on event form
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "closeEvent") {
-        document.querySelector('.eventForm').style.display = 'none';
+        document.querySelector('.eventModal').style.display = 'none';
     }
 })
 
@@ -54,8 +54,7 @@ const deleteEvent = articleId => {
 }
 
 
-
-//Export the NewsList funcition, to be invoked in Nutshell.js
+//Export the eventList funcition, to be invoked in Nutshell.js
 export const eventList = () => {
     getEventEntries()
         .then(useDateEvent)
@@ -63,17 +62,5 @@ export const eventList = () => {
 }
 
 
-// export const eventList = () => {
-//     getEventEntries()
-//     .then(() => {
-//         const upcomingEvents = useDateEvent()
-//         let event = "";
-
-//         for (const entry of upcomingEvents) {
-//             event += eventHTML(entry);
-//         }
-//         contentTarget.innerHTML += `${event}`;
-//     })
-// }
 
 

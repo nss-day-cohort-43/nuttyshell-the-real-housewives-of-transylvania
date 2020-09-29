@@ -19,28 +19,26 @@ eventHub.addEventListener("click", clickEvent => {
     }
 })
 
-const contentTarget = document.querySelector(".eventForm");
+const contentTarget = document.querySelector("#eventForm");
 
 export const loadEventFormHTML = () => {
    contentTarget.innerHTML = `
         <div class="eventModal">
-        <h2>New Event</h2>
-        </div>
         <div class="eventModalContent">
-            <form action="">
+            <form>
                 <div class="closeEvent">+</div>
                 <input type="text" placeholder="Event Name">
                 <input type="text" placeholder="Date">
                 <input type="text" placeholder="Location">
-                <button id="clearEvent">Clear</button>
-                <button id="saveEvent">Save</button>
-                <a href="" class="clearButton">Clear Form</a>
-                <a href="" class="saveButton">Save Event</a>
+                <button id="clearEvent" type="button">Clear</button>
+                <button id="saveEvent" type="button">Save</button>
             </form>
+        </div>
         </div>
         `
 }
 
+//Export the eventForm funcition, to be invoked in Nutshell.js
 export const eventForm = () => {
     getEventEntries()
         .then(() => {
