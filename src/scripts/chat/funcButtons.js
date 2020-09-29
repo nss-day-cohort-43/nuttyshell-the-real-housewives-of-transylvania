@@ -6,7 +6,7 @@ export const renderDelete = (message) => {
         return `
         <button class="edit" id="chatEdit-${message.id}">✏️</button>
         <button class="delete" id="chatDelete-${message.id}">🗑️</button>`
-
+        //if not a matching id, then empty string is returned
     } else {
         return ""
     }
