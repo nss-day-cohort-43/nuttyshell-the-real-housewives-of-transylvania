@@ -1,11 +1,10 @@
 import { saveEventEntry, useDateEvent, getEventEntries } from "./eventProvider.js"
 //Create a new event form that will post events created to upcoming events
 
-const contentTarget = document.querySelector(".eventForm")
-const eventHub = document.querySelector(".hubEvent")
+const eventHub = document.querySelector(".hubEvent");
 
 eventHub.addEventListener("click", clickEvent => {
-    if(clickEvent.target.id === "submit") {
+    if(clickEvent.target.id === "submitEvent") {
         const eventNameInput = document.querySelector("#eventName")
         const eventDateInput = document.querySelector("#eventDate")
         const eventLocationInput = document.querySelector("#eventLocation")
@@ -20,28 +19,33 @@ eventHub.addEventListener("click", clickEvent => {
     }
 })
 
-// export const eventButton = () => {
-//    contentTarget.innerHTML = `
-//     <button onclick="eventFillableForm()">New Event</button>
-//     `
-// }
+const contentTarget = document.querySelector(".eventForm");
 
-export const eventFillableForm = () => {
-   return `
+export const loadEventFormHTML = () => {
+   contentTarget.innerHTML = `
+        <div class="eventModal">
         <h2>New Event</h2>
-        <fieldset>
-        <label for="eventName">Name of Event</label>
-        <textarea name="eventName" id="eventName"></textarea>
-        </fieldset>
-        <fieldset>
-        <label for="newDate">Date of Event</label>
-        <input type="date" name="eventDate" id="eventDate">
-        </fieldset>
-        <fieldset>
-        <label for="eventLocation">Location of Event</label>
-        <textarea name="eventLocation" id="eventLocation"></textarea>
-        </fieldset>
-        <button id="submit" type="button">Submit Event</button>
+        </div>
+        <div class="eventModalContent">
+            <form action="">
+                <div class="closeEvent">+</div>
+                <input type="text" placeholder="Event Name">
+                <input type="text" placeholder="Date">
+                <input type="text" placeholder="Location">
+                <button id="clearEvent">Clear</button>
+                <button id="saveEvent">Save</button>
+                <a href="" class="clearButton">Clear Form</a>
+                <a href="" class="saveButton">Save Event</a>
+            </form>
+        </div>
         `
 }
+
+export const eventForm = () => {
+    getEventEntries()
+        .then(() => {
+            loadEventFormHTML(useDateEvent());
+        })
+}
+
 

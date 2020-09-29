@@ -2,21 +2,11 @@ import { useDateEvent, deleteEvent } from "./eventProvider.js";
 
 //Setup the appearance of an existing event on the HTML
 
-const eventHub = document.querySelector(".hubEvent")
-
-eventHub.addEventListener("click", clickEvent => {
-    if(clickEvent.target.classList[0] === "deleteEvent") {
-        const allEvents = useDateEvent() 
-        const chosenEvent = allEvents.find(event => {
-            const [prefix, buttonId] = clickEvent.target.id.split("-")
-            return parseInt(buttonId) === event.id
-        })
-        deleteEvent(chosenEvent)
-    }
-})
-
 export const eventHTML = eventObj => {
     return `
+        <div>
+            <h3>Upcoming Events</h3>
+        </div>
         <section id="events-${eventObj.id}" class="event-list">
             <p>Event: ${eventObj.name}</p>
             <p>Date: ${eventObj.date}</p>
@@ -28,8 +18,3 @@ export const eventHTML = eventObj => {
         `
 }
 
-export const newEventHTML = eventObj => {
-    return `
-    
-    `
-}

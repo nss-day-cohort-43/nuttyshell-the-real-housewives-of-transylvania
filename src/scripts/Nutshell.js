@@ -1,5 +1,5 @@
 // import { chatForm } from "./chat/chatForm.js"
-import { eventFillableForm } from "./events/eventForm.js"
+import { loadEventFormHTML } from "./events/eventForm.js"
 import { eventList } from "./events/eventList.js"
 
 // import { getMessages } from "./chat/chatProvider.js"
@@ -7,7 +7,7 @@ import { eventList } from "./events/eventList.js"
 
 export const Nutshell = () => {
     // Render all your UI components here
-    eventFillableForm()
     eventList()
+    loadEventFormHTML()
     // chatForm()
 }

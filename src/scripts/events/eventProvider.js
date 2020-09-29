@@ -15,7 +15,7 @@ export const useDateEvent = () => {
     return sortByDate
 }
 
-//Pull event information from json server function
+//Pull existing event information from json server function
 export const getEventEntries = () => {
     return fetch("http://localhost:8088/events") 
         .then(response => response.json())
@@ -33,6 +33,7 @@ export const saveEventEntry = newEventEntry => {
         },
         body: JSON.stringify(newEventEntry)
         }) 
+    .then(getEventEntries)
     .then(dispatchChangeEvent) 
 }
 
@@ -43,3 +44,4 @@ export const deleteEvent = deletedEvent => {
     })
     .then(dispatchChangeEvent)
 }
+

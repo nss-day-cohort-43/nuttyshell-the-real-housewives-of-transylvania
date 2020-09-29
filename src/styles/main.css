@@ -11,7 +11,7 @@
 
 }
 
-.bg-modal {
+.eventModal {
     width: 100%;
     height: 100%;
     background-color rgba(0, 0, 0, 0.7);
@@ -22,7 +22,7 @@
     align-items: center;
 }
 
-.modal-content {
+.eventModalContent {
     width: 500px;
     height: 300px;
     background-color: white;
@@ -38,7 +38,7 @@ input{
     margin: 15px auto;
 }
 
-.close{
+.closeEvent{
     position: absolute; 
     top: 0;
     right: 14px;
