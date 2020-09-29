@@ -4,7 +4,7 @@ export const renderDelete = (message) => {
     const sessionId = parseInt(sessionStorage.Id)
     if (sessionId === message.user.id) {
         return `
-        <button class="edit" id="chatEdit-${message.id}">🖉</button>
+        <button class="edit" id="chatEdit-${message.id}">✏️</button>
         <button class="delete" id="chatDelete-${message.id}">🗑️</button>`
 
     } else {

@@ -49,10 +49,10 @@ const renderFeed = (messageArray) => {
         <div class="message" >
             ${messageArray.map(message => {
             return `
-            <div id="messageBody-${message.id}"< p > ${message.user.username}: ${message.body}</p >
-            ${renderDelete(message)}
-            </div>
-            `
+            <div id="messageBody-${message.id}"< p > <button id="addFriend-${message.user.id}">${message.user.username}</button >: ${message.body}</p >
+                ${renderDelete(message)}
+            </div >
+    `
         }).join("")
             }
 
