@@ -6,52 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/task.css">
     <title>Document</title>
 </head>
 
 <body>
     <main class="hubEvent">
-    <article class="container">
-        <article class="auth">
-            <section class="auth--login"></section>
-            <section class="auth--register"></section>
-        </article>
-        <article class="dashboard">
-            <!-- All your Nutshell are belong here -->
-
-            <form class="newTasks">
-                <div class="taskContainer">
-                    <h3>New Tasks</h3>
-                    <fieldset>
-                        <label for="tasksName">Tasks Name</label>
-                        <textarea name="text" name="tasksName" id="tasksName" cols="25" rows="1"></textarea>
-                    </fieldset>
-                    
-                    <fieldset>
-                        <label for="completionDate">Expected Completion Date</label>
-                        <input type="date" name="completionDate" id="completionDate">
-                    </fieldset>
-                    <fieldset>
-                        <label for="saveTask"></label>
-                        <button type="button" id="saveTask" value="saveTask">Save Task</button>
-                        <!-- this should be a ul list -->
-                    </fieldset>
-                    <fieldset>
-                        <label for="clearForm"></label>
-                        <button type="button" id="resetTask">Reset</button>
-                        <!-- <input type="submit" name="clearTask" id="clearTask" value="Clear Task"> -->
-                    </fieldset>
-                </div>
+        <article class="container">
+            <article class="auth">
+                <section class="auth--login"></section>
+                <section class="auth--register"></section>
+            </article>
+            <article class="dashboard">
+                <!-- All your Nutshell are belong here -->
+            </article>
+            <!-- Modal Section -->
+            <div class="createNewTask"></div>
+            <!-- <div class="modal-content">
+            <div class="close">+</div>
+            <form action="">
+                <input type="text" placeholder="Enter Task Name Here...">
+                <input type="date" placeholder="Expected Completion Date">
+                <button type="button" id="addTask" value="addTask">Submit</button>
             </form>
-                <h3>Task List</h3>
-                <article class="taskListContainer"></article>                
-                        
-                   
-        </article>
-    </article>
-</main>
-    <script src="./scripts/main.js" type="module"></script>
+        </div> -->
 
+            <!-- Task section goes here -->
+            <article id="tasks"></article>
+            <ul id="taskList">
+            </ul>
+            <!-- <form class="newTasks">
+                            <div class="taskContainer">
+                                <h3>Create a Task</h3>
+                                <button type="button" id="createTask" value="createTask">Create!</button>
+                            </div>
+                        </form> -->
+
+        </article>
+    </main>
+    <script src="./scripts/main.js" type="module"></script>
 </body>
 
 </html>
+
+
+
+            
+
+
+
+                
+
+
