@@ -1,4 +1,4 @@
-@import'../scripts/news/news.css'
+@import "./news.css";
 
 .edit {
    border: none;
