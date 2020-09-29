@@ -27,7 +27,6 @@ export const getArticles = () => {
         .then(response => response.json())  // Parse as JSON
         .then(
             parsedArticles => {
-                console.table(parsedArticles)
                 articles = parsedArticles
             }
 

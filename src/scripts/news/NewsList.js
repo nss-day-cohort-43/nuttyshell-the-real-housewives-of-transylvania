@@ -64,7 +64,7 @@ const render = (articles) => {
     newsArticles.innerHTML = `${articles.map((article) => {
         return NewsEntry(article)
     }).join("")}
-    <button id="createNewArticleBttn">Create New Article</button>`
+    <button id="createNewArticleBttn" type= "button">Create New Article</button>`
 }
 
 // export the NewsList funcition, to be invoked in Nutshell.js
