@@ -1,5 +1,6 @@
 import { getMessages, useMessages, submitMessage, deleteMessage } from "./chatProvider.js"
 import { renderDelete } from "./funcButtons.js"
+import { EditMessageForm } from "./editMessage.js"
 
 
 const eventHub = document.querySelector(".hubEvent")
@@ -27,6 +28,11 @@ eventHub.addEventListener("click", event => {
         const [prefix, id] = event.target.id.split("-")
         deleteMessage(id)
             .then(chatForm)
+    } else if (event.target.id.startsWith("chatEdit-")) {
+        const [prefix, id] = event.target.id.split("-")
+
+        EditMessageForm(id)
+
     }
 })
 
@@ -43,7 +49,7 @@ const renderFeed = (messageArray) => {
         <div class="message" >
             ${messageArray.map(message => {
             return `
-            <div id="messageBody""< p > ${message.user.username}: ${message.body}</p >
+            <div id="messageBody-${message.id}"< p > ${message.user.username}: ${message.body}</p >
             ${renderDelete(message)}
             </div>
             `
