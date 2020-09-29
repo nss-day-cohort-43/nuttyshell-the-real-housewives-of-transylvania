@@ -7,7 +7,6 @@ const eventHub = document.querySelector(".hubEvent")
 eventHub.addEventListener("click", event => {
     if (event.target.id.startsWith("saveEdit-")) {
         const [prefix, id] = event.target.id.split("-");
-        debugger;
         const updatedMessage = {
             body: document.querySelector(`#input-edit-${parseInt(id)}`).value,
             userId: parseInt(sessionStorage.Id)
@@ -19,7 +18,6 @@ eventHub.addEventListener("click", event => {
 
 //EditMessageForm is on chatForm where it in invoke in eventListener
 export const EditMessageForm = (messageId) => {
-    debugger;
     const test = getSingleMessage(parseInt(messageId))
         .then((response) => {
             console.log(response)
