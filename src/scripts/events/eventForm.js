@@ -1,4 +1,4 @@
-import { saveEventEntry } from "./eventProvider.js"
+import { saveEventEntry, useDateEvent, getEventEntries } from "./eventProvider.js"
 //Create a new event form that will post events created to upcoming events
 
 const contentTarget = document.querySelector(".eventForm")
@@ -44,3 +44,4 @@ export const eventFillableForm = () => {
         <button id="submit" type="button">Submit Event</button>
         `
 }
+

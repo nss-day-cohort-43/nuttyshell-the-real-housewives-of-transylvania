@@ -2,11 +2,6 @@ import { useDateEvent, deleteEvent } from "./eventProvider.js";
 
 //Setup the appearance of an existing event on the HTML
 
-// export let URL = "http://dataservice.accuweather.com/forecasts/v1/daily/1day/{locationKey}";
-// export let eventHTML = (eventObj) => {
-// URL = ""
-// }
-
 const eventHub = document.querySelector(".hubEvent")
 
 eventHub.addEventListener("click", clickEvent => {
@@ -22,9 +17,6 @@ eventHub.addEventListener("click", clickEvent => {
 
 export const eventHTML = eventObj => {
     return `
-        <div id="header">
-            <h3>Upcoming Events<h3>
-        </div>
         <section id="events-${eventObj.id}" class="event-list">
             <p>Event: ${eventObj.name}</p>
             <p>Date: ${eventObj.date}</p>
@@ -41,8 +33,3 @@ export const newEventHTML = eventObj => {
     
     `
 }
-
-
-//<div id="newEventSection">
-//<button id="newEvent">New Event</button>
-//</div>
