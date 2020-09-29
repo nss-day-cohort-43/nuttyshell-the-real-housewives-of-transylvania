@@ -1,4 +1,5 @@
 @import "event.css";
+@import "./news.css";
 
 .dashboard {
     display: flex;
@@ -11,3 +12,14 @@ body {
     background: #f06d06;
     color: white;
   }
+
+.edit {
+   border: none;
+   background-color: transparent;
+   outline: none;
+}
+.delete {
+    border: none;
+    background-color: transparent;
+    outline: none;
+ }

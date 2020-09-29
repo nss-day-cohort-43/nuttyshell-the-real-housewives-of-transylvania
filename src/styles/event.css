@@ -9,7 +9,7 @@
 .eventModal {
     width: 100%;
     height: 100%;
-    background-color rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
     top: 0;
     display: none;
@@ -35,6 +35,7 @@ input{
 
 #closeEvent{
     position: absolute; 
+    color: black;
     top: 0;
     right: 14px;
     font-size: 32px;
