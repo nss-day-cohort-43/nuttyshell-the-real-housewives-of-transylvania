@@ -24,6 +24,7 @@
  
  #newsModalClose {
      position: absolute;
+     color: black;
      top: 0;
      right: 14px;
      font-size: 38px;

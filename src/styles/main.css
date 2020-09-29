@@ -1,4 +1,17 @@
+@import "event.css";
 @import "./news.css";
+
+.dashboard {
+    display: flex;
+    flex-flow: row wrap; 
+    justify-content: space-between;
+}
+
+body {
+    font-family: system-ui;
+    background: #f06d06;
+    color: white;
+  }
 
 .edit {
    border: none;
