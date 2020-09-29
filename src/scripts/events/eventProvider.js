@@ -2,8 +2,10 @@ const eventHub = document.querySelector(".hubEvent")
 
 let eventEntries = []
 
+//Create new custom event for the Save New Event button to load to json
 const dispatchChangeEvent = () => {
-    eventHub.dispatchEvent(new CustomEvent("eventStateChanged"))
+    const eventListChanged = new CustomEvent("")
+    eventHub.dispatchEvent(eventListChanged)
 }
  
 //Chronological sorting function
@@ -12,7 +14,7 @@ export const useDateEvent = () => {
         (currentEvent, nextEvent) =>
             Date.parse(currentEvent.date) - Date.parse(nextEvent.date)
     )
-    return sortByDate
+    return sortByDate 
 }
 
 //Pull existing event information from json server function

@@ -14,7 +14,7 @@ export const eventHTML = eventObj => {
             <button id="editEvent--${eventObj.id}">Edit</button>
             <button id="deleteEvent--${eventObj.id}">Delete</button>
             <button id="weather">Show Weather</button>
-        </section>
+        </section> 
         `
 }
 

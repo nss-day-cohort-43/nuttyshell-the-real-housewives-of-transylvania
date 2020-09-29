@@ -4,9 +4,10 @@ import { eventHTML } from "./events.js";
 const eventHub = document.querySelector(".hubEvent")
 const listedEvents = document.querySelector("#eventList")
 
-eventHub.addEventListener("eventChanged", event => {
+//Listens for Save button in Event Form to be clicked
+eventHub.addEventListener("eventStateChanged", () => {
     const newEntry = useDateEvent()
-
+    render(newEntry)
 })
 
 //Listens for add event click on existing event list
@@ -24,7 +25,7 @@ const render = (events) => {
     <button id="addEventButton" type="button">Add Event</button>`
 }
 
-//Listens for close x click on event form
+//Listens for Close X click on event form
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "closeEvent") {
         document.querySelector('.eventModal').style.display = 'none';
@@ -38,15 +39,15 @@ eventHub.addEventListener("click", clickEvent => {
 
         deleteEvent(id).then(
             () => {
-                const updatedEventList = useDateEvent()
+                const updatedEventList = useDateEvent() 
                 render(updatedEventList)
             }
         )
     }
-})
+}) 
 
 //Delete a event by its specific id
-const deleteEvent = articleId => {
+const deleteEvent = eventId => {
     return fetch(`http://localhost:8088/events/${eventId}`, {
         method: "DELETE"
     })

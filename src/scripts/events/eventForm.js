@@ -4,17 +4,17 @@ import { saveEventEntry, useDateEvent, getEventEntries } from "./eventProvider.j
 const eventHub = document.querySelector(".hubEvent");
 
 eventHub.addEventListener("click", clickEvent => {
-    if(clickEvent.target.id === "submitEvent") {
+    if(clickEvent.target.id === "saveEvent") {
         const eventNameInput = document.querySelector("#eventName")
         const eventDateInput = document.querySelector("#eventDate")
         const eventLocationInput = document.querySelector("#eventLocation")
     if (eventNameInput.value !== "" && eventDateInput.value !== "" && eventLocationInput.value !== "") {
         const newEvent = {
-        "name": eventNameInput.value,
-        "date": eventDateInput.value,
-        "location": eventLocationInput.value,
+            name: eventNameInput.value,
+            date: eventDateInput.value,
+            location: eventLocationInput.value,
         }
-        saveEventEntry(newEvent)
+        saveEventEntry(newEvent) 
         }
     }
 })
@@ -26,11 +26,10 @@ export const loadEventFormHTML = () => {
         <div class="eventModal">
         <div class="eventModalContent">
             <form>
-                <div class="closeEvent">+</div>
-                <input type="text" placeholder="Event Name">
-                <input type="text" placeholder="Date">
-                <input type="text" placeholder="Location">
-                <button id="clearEvent" type="button">Clear</button>
+                <div id="closeEvent">+</div>
+                <input type="text" id="eventName" placeholder="Event Name">
+                <input type="text" id="eventDate" placeholder="Date">
+                <input type="text" id="eventLocation" placeholder="Location">
                 <button id="saveEvent" type="button">Save</button>
             </form>
         </div>
