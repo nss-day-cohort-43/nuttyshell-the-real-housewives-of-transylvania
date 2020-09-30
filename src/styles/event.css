@@ -1,6 +1,7 @@
-.eventList {
-
-}
+#eventList{
+    padding: 20px;
+    border: dotted darkorange;
+   }
 
 .eventForm {
 
@@ -42,3 +43,8 @@ input{
     transform: rotate(45deg);
     cursor: pointer; 
 } 
+
+#addEventButton{
+    margin: -30px,; 
+    float: right;
+}

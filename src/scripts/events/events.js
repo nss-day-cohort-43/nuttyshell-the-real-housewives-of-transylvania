@@ -4,9 +4,6 @@ import { useDateEvent, deleteEvent } from "./eventProvider.js";
 
 export const eventHTML = eventObj => {
     return `
-        <div>
-            <h3>Upcoming Events</h3>
-        </div>
         <section id="events-${eventObj.id}" class="event-list">
             <p>Event: ${eventObj.name}</p>
             <p>Date: ${eventObj.date}</p>
