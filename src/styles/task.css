@@ -25,8 +25,9 @@ input{
     margin: 15px auto;
 }
 
-.closeTask{
-    position: absolute; 
+#closeTask{
+    position: absolute;
+    color: black; 
     top: 0;
     right: 14px;
     font-size: 32px;

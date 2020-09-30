@@ -11,9 +11,9 @@ const eventHub = document.querySelector(".hubEvent");
 const render = () => {
     contentTarget.innerHTML = `
     <div class="taskModal">
-                    <div class="taskModalContent">
-                        <div class="closeTask">+</div>
-                        <form>
+    <div class="taskModalContent">
+                    <form>
+                    <div id="closeTask">+</div>
                         <h3>Add New Task</h3>
                             <input type="text" id="taskContent" placeholder="Enter Task Here...">
                             <input type="date" id="taskDate" placeholder="Expected Completion Date">
