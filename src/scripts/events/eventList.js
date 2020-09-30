@@ -19,7 +19,9 @@ eventHub.addEventListener("click", clickEvent => {
 
 //Loads the events list and add new event button
 const render = (events) => {
-    listedEvents.innerHTML = `${events.map((event) => {
+    listedEvents.innerHTML = `
+    <h3>Upcoming Events</h3>
+    ${events.map((event) => {
         return eventHTML(event)
     }).join("")}
     <button id="addEventButton" type="button">Add Event</button>`

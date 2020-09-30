@@ -1,25 +1,69 @@
 @import "event.css";
 @import "./news.css";
-@import "./task.css";
-.dashboard {
-    display: flex;
-    flex-flow: row wrap; 
-    justify-content: space-between;
-}
 
 body {
     font-family: system-ui;
     background: #f06d06;
     color: white;
-  }
+}
 
 .edit {
    border: none;
    background-color: transparent;
    outline: none;
 }
+
 .delete {
     border: none;
     background-color: transparent;
     outline: none;
  }
+
+ /*--Dashboard Section--*/
+ .dashboard{
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-gap: 10px 10px;
+  width: 600px;
+  height: 100%;
+  margin: 20px 40px 40px 40px;
+  padding: 20px 40px 40px 40px;
+ }
+
+/*--Footer Section--*/
+ 
+ footer {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  background-color: #030303;
+  color: #fff;
+  font-size: 17px;
+}
+
+.logoFooter {
+  padding: 10px;
+ }
+
+ .grid-items {
+  display: grid;
+  grid-template-columns: 25fr 25fr 25fr 15fr;
+  border: 1px solid rgba(0, 0, 0, 0);
+  padding: 20px;
+  text-align: left;
+  text-decoration: none;
+ }
+
+a:link {
+  color:rgb(228, 222, 222);
+}
+
+a:visited {
+  color:rgb(170, 159, 159);
+}
+
+a:hover {
+  color: rgb(165, 8, 8);
+}
+
+
+
