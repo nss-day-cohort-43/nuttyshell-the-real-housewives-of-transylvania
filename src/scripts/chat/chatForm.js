@@ -3,8 +3,8 @@ import { renderDelete } from "./funcButtons.js"
 import { EditMessageForm } from "./editMessage.js"
 
 
-// const eventHub = document.querySelector(".hubEvent")
-// const chatFeed = document.querySelector(".dashboard")
+const eventHub = document.querySelector(".hubEvent")
+const chatFeed = document.querySelector(".dashboard")
 
 //targets the scroll feature, and starts scroll at most recent message/bottom of chat feed
 export const scrollBottom = () => {
