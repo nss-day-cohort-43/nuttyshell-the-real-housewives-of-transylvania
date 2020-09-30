@@ -3,7 +3,8 @@
 
 header {
     display: flex;
-    background-color: whitesmoke;
+    background-color: #36454F;
+    border: .25em solid black;
 }
 
 #accountIcon {
@@ -14,7 +15,7 @@ header {
 
 .dashboard {
     display: flex;
-    flex-flow: row wrap; 
+    flex-direction: column;
     justify-content: space-between;
 }
 
