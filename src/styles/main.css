@@ -1,12 +1,25 @@
+@import "event.css";
+@import "./news.css";
+@import "./task.css";
 .dashboard {
     display: flex;
     flex-flow: row wrap; 
+    justify-content: space-between;
 }
 
+body {
+    font-family: system-ui;
+    background: #f06d06;
+    color: white;
+  }
 
-input{
-    width: 50%;
-    display: block;
-    margin: 15px auto;
+.edit {
+   border: none;
+   background-color: transparent;
+   outline: none;
 }
-
+.delete {
+    border: none;
+    background-color: transparent;
+    outline: none;
+ }
