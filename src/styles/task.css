@@ -34,3 +34,8 @@ input{
     transform: rotate(45deg);
     cursor: pointer; 
 }
+
+#taskList{
+    padding: 20px;
+    border: dotted darkorange;
+}
