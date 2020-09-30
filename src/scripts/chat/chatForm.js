@@ -44,21 +44,21 @@ eventHub.addEventListener("click", event => {
 const renderFeed = (messageArray) => {
     if (messageArray)
         chatFeed.innerHTML = `
-<h3>Chat Room</h3>
+
     <section id="chatParentContainer">
+        <h3>Chat Room</h3>
         <div class="message" >
             ${messageArray.map(message => {
             return `
-            <div id="messageBody-${message.id}"< p > ${message.user.username}: ${message.body}</p >
-            ${renderDelete(message)}
-            </div>
-            `
+            <div id="messageBody-${message.id}"<p>${message.user.username}: ${message.body}</p >
+                ${renderDelete(message)}
+            </div >
+    `
         }).join("")
             }
 
         </div >
-    </section >
-    <section id="enterMessage">
+    <div id="enterMessage">
         <textarea id="newMessage" name="newMessage" placeholder="@ will make a private message"></textarea>
         <button type="submit" id="submit">Send</button>
     </section>

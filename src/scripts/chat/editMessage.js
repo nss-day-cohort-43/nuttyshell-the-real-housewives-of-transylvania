@@ -20,7 +20,6 @@ eventHub.addEventListener("click", event => {
 export const EditMessageForm = (messageId) => {
     const test = getSingleMessage(parseInt(messageId))
         .then((response) => {
-            console.log(response)
             document.querySelector(`#messageBody-${messageId}`).innerHTML = `
             <input type="hidden" value="${messageId} id="edit-message">
             <input id="input-edit-${messageId}" value="${response.body}"/>
