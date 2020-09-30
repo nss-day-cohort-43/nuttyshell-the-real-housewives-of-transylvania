@@ -1,6 +1,17 @@
 @import "event.css";
 @import "./news.css";
 
+header {
+    display: flex;
+    background-color: whitesmoke;
+}
+
+#accountIcon {
+    position: absolute;
+    left: 90%;
+    opacity: 70%;
+}
+
 .dashboard {
     display: flex;
     flex-flow: row wrap; 
@@ -12,6 +23,14 @@ body {
     background: #f06d06;
     color: white;
   }
+
+.message {
+    height: 200px;
+    width: 20em;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
 
 .edit {
    border: none;

@@ -44,8 +44,9 @@ eventHub.addEventListener("click", event => {
 const renderFeed = (messageArray) => {
     if (messageArray)
         chatFeed.innerHTML = `
-<h3>Chat Room</h3>
+
     <section id="chatParentContainer">
+        <h3>Chat Room</h3>
         <div class="message" >
             ${messageArray.map(message => {
             return `
@@ -57,8 +58,7 @@ const renderFeed = (messageArray) => {
             }
 
         </div >
-    </section >
-    <section id="enterMessage">
+    <div id="enterMessage">
         <textarea id="newMessage" name="newMessage" placeholder="@ will make a private message"></textarea>
         <button type="submit" id="submit">Send</button>
     </section>
