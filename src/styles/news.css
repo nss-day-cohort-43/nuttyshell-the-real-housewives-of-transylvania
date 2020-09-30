@@ -32,3 +32,8 @@
      cursor: pointer;
  
  }
+
+ #newsArticles{
+    padding: 20px;
+     border: dotted darkorange;
+  }
