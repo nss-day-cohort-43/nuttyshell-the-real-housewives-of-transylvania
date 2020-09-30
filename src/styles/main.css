@@ -1,11 +1,37 @@
 @import "event.css";
 @import "./news.css";
 
+header {
+    display: flex;
+    background-color: #36454F;
+    border: .25em solid black;
+}
+
+#accountIcon {
+    position: absolute;
+    left: 90%;
+    opacity: 70%;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 body {
     font-family: system-ui;
     background: #f06d06;
     color: white;
 }
+
+.message {
+    height: 200px;
+    width: 20em;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
 
 .edit {
    border: none;
