@@ -86,7 +86,9 @@ export const TaskList = () => {
 
 
 const render = (tasks) => {
-    taskList.innerHTML = `${tasks.map((task) => {
+    taskList.innerHTML = `
+    <h3>Task List</h3>
+    ${tasks.map((task) => {
         return TaskHTML(task)
 
     }).join("")}
@@ -130,28 +132,7 @@ eventHub.addEventListener("click", event => {
 }
 )
     
-// eventHub.addEventListener("click", clickEvent => {
-//     if (clickEvent.target.id.startsWith("editTask--")) {
-//         const [prefix, id] = clickEvent.target.id.split("--")
 
-//         editTask(id).then(
-//             () => {
-//                 const editedTasks = useTasks()
-//                 render(editTask)
-//             }
-//         )
-//     }
-// })
-     
-
-// const editTask = task => {
-//     return fetch(`http://localhost:8088/tasks/${taskId}`, {
-//         method: "PUT"
-        
-// })
-// .then(getTasks)
-// .then(dispatchStateChangeEvent)
-// }
 
 
 

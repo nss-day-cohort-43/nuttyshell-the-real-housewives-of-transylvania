@@ -5,12 +5,13 @@ const eventHub = document.querySelector(".hubEvent")
 export const TaskHTML = (taskObj) => {
     return `
     <section class="taskListContainer">
-    <span class="checkmark"></span>
-        <div class="taskListContainer">Date: ${taskObj.finishby}</div>
-        <div class="taskListContainer">Task: ${taskObj.tasksname}</div>
-        <button id="editTask--${taskObj.id}">Edit</button>
-        <input type="hidden" name="taskId" id="taskId">
-        <button id="deleteTask--${taskObj.id}">Delete</button>
+        <p>
+            <div class="taskListContainer">Date: ${taskObj.finishby}</div>
+            <div class="taskListContainer">Task: ${taskObj.tasksname}</div>
+            <button id="editTask--${taskObj.id}">Edit</button>
+            <input type="hidden" name="taskId" id="taskId">
+            <button id="deleteTask--${taskObj.id}">Delete</button>
+        </p>
     </section>
 `
 }
