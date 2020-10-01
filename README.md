@@ -1,77 +1,51 @@
-# Nutshell: The Information Dashboard
+# Nutshell: The Information Dashboard by The Real Transylvania Housewives
 
-## Setup: Follow these steps exactly
+## Overview
 
-1. Clone this repository
-1. `cd` into the directory it creates
-1. Make a `database.json` file in the `api` directory
-1. Delete the `.ignore` file in the `api` directory
+Nutshell is a a dashboard for people to use to organize their daily tasks, events, news article, friends, and chat messages.
 
-> **Note:** Your `database.json` file is already in the `.gitignore` file for this project, so it will never be added to the repo or pushed to Github.
+## Target Audience
+Expectant mummies (the scary, mumified ones). Happy Halloween!
+![expectantMummie](./images/expectmum5.jpg)
 
-## Instructions
-
-Nutshell is a new product offering that you have been tasked with building. It's a dashboard for people to use to organize their daily tasks, events, news article, friends, and chat messages.
-
-You will be utilizing all of the skills and concepts that you've learned up to this point in the course.
+## Learning Objectives
 
 1. Functions
-1. Databases
-1. Github
-1. Objects
-1. CSS/Flexbox
-1. Array methods
-1. Components
-1. Handling user events
-1. Implementing CRUD operations
-1. Relational data
-1. ERDs
+2. Databases
+3. Github
+4. Objects
+5. CSS/Flexbox
+6. Array methods
+7. Components
+8. Handling user events
+9. Implementing CRUD operations
+10. Relational data
+11. ERDs
 
-To start you off, here's an example of what the resources in your API should look like once it's populated with some data from your application.
+## Planning Tools
 
-### Users
+1. Login Wireframe ![Login Wireframe](./wireframe/LoginWireframe.png)
+2. Wireframe ![Wireframe](./wireframe/Wireframe.png)
+3. ERD ![ERD](./wireframe/ERD.png)
 
-```json
-{ "id": 1, "username": "Steve", "email": "me@me.com" }
-```
+## Instructions for Running Nutshell
+Make sure you have Node.js and npm installed. After those are installed, make sure you use npm to install serve and json-server.
 
-### Messages
+1. git clone the repository URL
+2. cd into the directory it creates
+3. touch api/database.json
+4. Delete the .ignore file in the api directory
+5. touch src/scripts/Settings.js
+6. In your database.json file, copy and paste the following code:
+{ "users": [], "tasks": [], "events": [], "news": [], "messages": [], "friends": [] }
+7. Serve JSON file utilizing json-server -w database.json -p 8088
+8. In a new tab in your terminal, cd into src, and serve
+9. Go to the localhost address in your browser that serve is serving on and register an account
 
-```json
-{ "id": 1, "userId": 1, "message": "What's up?" }
-```
+## Team: The Real Transylvania Housewives
 
-### News
+- [Devon Cox](https://github.com/Devco2011)
+- [Joseph Tidwell](https://github.com/joetid09)
+- [Marcel Jones](https://github.com/marceljones)
+- [Tessa Steffen](https://github.com/TessaSoftEng)
 
-```json
-{
-    "id": 1,
-    "userId": 2,
-    "url": "https://www.quantamagazine.org/newfound-wormhole-allows-information-to-escape-black-holes-20171023/",
-    "title": "Wormholes Allow Information to Escape Black Holes",
-    "synopsis": "Check out this recent discovery about workholes"
-}
-```
-
-### Friends
-
-```json
-{ "id": 1, "userId": 1, "following": 3 }
-```
-
-### Tasks
-
-```json
-{ "id": 1, "userId": 3, "task": "Take out garbage", "complete": false }
-```
-
-## Professional Requirements
-
-1. Each module should have a comment at the top with the following info: author(s) and purpose of module
-1. The README for your project should include instructions on how another person can download and run the application
-
-## A Note About Authentication
-
-We want you to know that the login and registration code we have given you is fake, completely insecure, and would never be implemented in a professional application. It is a simulation authentication using very simplistic tools, because authentication is not a learning objective of students at NSS.
-
-You will be using [session storage](https://javascript.info/localstorage#sessionstorage) to keep track of which user has logged into Nutshell. You need to read the code in the **`LoginForm`** and **`RegisterForm`** components so that you see what is going on, but you do not need to change it. However, you will have to use a custom message that is being dispatched by those components.
